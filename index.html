@@ -126,9 +126,10 @@
         color: var(--orange);
       }
       .hero-text p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: #64748b;
         margin-bottom: 40px;
+        line-height: 1.6;
       }
 
       .slider-box {
@@ -139,6 +140,7 @@
         overflow: hidden;
         box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
         border: 10px solid white;
+        background: #eee; /* Resim yüklenene kadar gri durur */
       }
       .img-layer {
         position: absolute;
@@ -149,15 +151,18 @@
         background-size: cover;
         background-position: center;
       }
+
+      /* Thumbnail formatı kullanılarak resimlerin görünmesi sağlandı */
       .after-img {
-        background-image: url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1470");
+        background-image: url("https://drive.google.com/thumbnail?id=1zQINvJ3rMxaQUhuBir9L4uNzPGH5K5Ng&sz=w1200");
       }
       .before-img {
-        background-image: url("https://images.unsplash.com/photo-1581092341396-d99b70828b9a?q=80&w=1470");
+        background-image: url("https://drive.google.com/thumbnail?id=1dLNeicX-jWomZwwwENR2feOcVhFDz7tz&sz=w1200");
         width: 50%;
         border-right: 4px solid var(--orange);
         z-index: 2;
       }
+
       .handle {
         position: absolute;
         z-index: 10;
@@ -177,7 +182,7 @@
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
       }
 
-      /* --- SERTİFİKA THUMBNAILS --- */
+      /* --- SERTİFİKA --- */
       .iso-section {
         padding: 100px 8%;
         text-align: center;
@@ -206,7 +211,6 @@
       }
       .iso-thumb:hover {
         transform: translateY(-10px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
         border-color: var(--blue);
       }
       .iso-thumb img {
@@ -221,7 +225,6 @@
       .iso-thumb h3 {
         font-size: 1rem;
         font-weight: 800;
-        color: var(--navy);
       }
       .iso-thumb span {
         color: var(--orange);
@@ -302,7 +305,6 @@
         grid-template-columns: 1.5fr 1fr 1fr;
         gap: 80px;
       }
-
       .footer-logo-wrapper {
         background: white;
         display: inline-block;
@@ -315,7 +317,6 @@
         width: auto;
         display: block;
       }
-
       .footer-title {
         font-family: "Montserrat", sans-serif;
         font-weight: 800;
@@ -335,7 +336,6 @@
         height: 2px;
         background: var(--orange);
       }
-
       .footer-info {
         list-style: none;
       }
@@ -358,7 +358,6 @@
       .footer-info a:hover {
         color: var(--white);
       }
-
       .footer-bottom {
         border-top: 1px solid rgba(255, 255, 255, 0.05);
         margin-top: 80px;
@@ -433,9 +432,10 @@
         <div class="hero-text">
           <h1>Hassas Onarım, <br /><span>Kusursuz</span> İletim.</h1>
           <p>
-            Savunma, enerji ve medikal sistemlerdeki slipring ünitelerini,
-            akredite mühendislik laboratuvarımızda orijinal performansına
-            döndürüyoruz.
+            Savunma, enerji ve medikal sektörlerindeki kritik slipring
+            ünitelerini; akredite mühendislik merkezimizde ileri teknik
+            restorasyon süreçlerinden geçirerek, orijinal fabrika standartlarına
+            ulaştırıyoruz.
           </p>
           <a
             href="https://wa.me/905525676677"
@@ -542,7 +542,7 @@
           </div>
           <p style="font-size: 0.9rem; line-height: 1.8">
             Savunma ve enerji odaklı mühendislik çözümleri sunan Türkiye'nin
-            sertifikalı ilk slipring restorasyon laboratuvarı.
+            sertifikalı ilk slipring restorasyon merkezi.
           </p>
         </div>
         <div>
