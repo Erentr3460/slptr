@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slipring Elektrik A.Ş. | Onarım ve Bakım</title>
+    <title>Slipring Elektrik A.Ş. | Onarım Ve Bakım</title>
 
     <link
       rel="icon"
@@ -140,7 +140,7 @@
         overflow: hidden;
         box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
         border: 10px solid white;
-        background: #eee; /* Resim yüklenene kadar gri durur */
+        background: #222;
       }
       .img-layer {
         position: absolute;
@@ -152,10 +152,12 @@
         background-position: center;
       }
 
-      /* Thumbnail formatı kullanılarak resimlerin görünmesi sağlandı */
+      /* Tamir Sonrası (Arka Katman) */
       .after-img {
         background-image: url("https://drive.google.com/thumbnail?id=1zQINvJ3rMxaQUhuBir9L4uNzPGH5K5Ng&sz=w1200");
+        z-index: 1;
       }
+      /* Tamir Öncesi (Üst Katman - Maskelenen) */
       .before-img {
         background-image: url("https://drive.google.com/thumbnail?id=1dLNeicX-jWomZwwwENR2feOcVhFDz7tz&sz=w1200");
         width: 50%;
@@ -182,7 +184,28 @@
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
       }
 
-      /* --- SERTİFİKA --- */
+      .slider-label {
+        position: absolute;
+        top: 20px;
+        padding: 6px 15px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        z-index: 5;
+        border-radius: 2px;
+        pointer-events: none;
+      }
+      .label-before {
+        left: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+      }
+      .label-after {
+        right: 20px;
+        background: var(--blue);
+        color: white;
+      }
+
+      /* --- ISO BELGELERİMİZ --- */
       .iso-section {
         padding: 100px 8%;
         text-align: center;
@@ -225,6 +248,7 @@
       .iso-thumb h3 {
         font-size: 1rem;
         font-weight: 800;
+        color: var(--navy);
       }
       .iso-thumb span {
         color: var(--orange);
@@ -235,7 +259,7 @@
         display: block;
       }
 
-      /* --- FLOATING ACTIONS --- */
+      /* --- SOSYAL MENÜ --- */
       .float-menu {
         position: fixed;
         bottom: 40px;
@@ -284,7 +308,7 @@
         }
       }
 
-      /* --- FOOTER --- */
+      /* --- KURUMSAL FOOTER --- */
       footer {
         background: var(--footer-bg);
         padding: 100px 8% 40px;
@@ -305,6 +329,7 @@
         grid-template-columns: 1.5fr 1fr 1fr;
         gap: 80px;
       }
+
       .footer-logo-wrapper {
         background: white;
         display: inline-block;
@@ -317,6 +342,7 @@
         width: auto;
         display: block;
       }
+
       .footer-title {
         font-family: "Montserrat", sans-serif;
         font-weight: 800;
@@ -336,6 +362,7 @@
         height: 2px;
         background: var(--orange);
       }
+
       .footer-info {
         list-style: none;
       }
@@ -358,6 +385,7 @@
       .footer-info a:hover {
         color: var(--white);
       }
+
       .footer-bottom {
         border-top: 1px solid rgba(255, 255, 255, 0.05);
         margin-top: 80px;
@@ -456,34 +484,8 @@
           <div class="img-layer after-img"></div>
           <div class="img-layer before-img" id="before-layer"></div>
           <div class="handle" id="slider-handle">⬌</div>
-          <div
-            style="
-              position: absolute;
-              top: 20px;
-              left: 20px;
-              background: rgba(0, 0, 0, 0.8);
-              color: white;
-              padding: 6px 15px;
-              font-size: 0.7rem;
-              font-weight: 800;
-            "
-          >
-            REVİZYON ÖNCESİ
-          </div>
-          <div
-            style="
-              position: absolute;
-              top: 20px;
-              right: 20px;
-              background: var(--blue);
-              color: white;
-              padding: 6px 15px;
-              font-size: 0.7rem;
-              font-weight: 800;
-            "
-          >
-            RESTORE EDİLDİ
-          </div>
+          <div class="slider-label label-before">REVİZYON ÖNCESİ</div>
+          <div class="slider-label label-after">RESTORE EDİLDİ</div>
         </div>
       </section>
 
