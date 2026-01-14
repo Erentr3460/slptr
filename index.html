@@ -24,7 +24,7 @@
       :root {
         --orange: #f39200;
         --blue: #00b5e2;
-        --navy: #020d1f; /* Koyu Lacivert */
+        --navy: #020d1f;
         --grey: #666666;
         --white: #ffffff;
         --light-bg: #f8fafc;
@@ -46,13 +46,12 @@
         font-family: "Plus Jakarta Sans", sans-serif;
         color: var(--navy);
         background: var(--white);
-        /* Font netliği için düzeltmeler */
         -webkit-font-smoothing: initial;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
       }
 
-      /* --- ÜST BİLGİ ŞERİDİ (Geri Getirilen Gri Stil) --- */
+      /* --- ÜST BİLGİ ŞERİDİ --- */
       .top-specs {
         background: var(--grey);
         color: white;
@@ -71,7 +70,7 @@
         color: var(--orange);
       }
 
-      /* --- NAVİGASYON (Aydınlık Stil) --- */
+      /* --- NAVİGASYON --- */
       header {
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(15px);
@@ -106,33 +105,32 @@
         color: var(--orange);
       }
 
-      /* --- HERO BÖLÜMÜ (LACİVERT YAPILDI) --- */
+      /* --- HERO BÖLÜMÜ --- */
       .hero {
         padding: 100px 8%;
         display: grid;
         grid-template-columns: 1fr 1.2fr;
         gap: 60px;
         align-items: center;
-        background: var(--navy); /* Lacivert Arka Plan */
+        background: var(--navy);
       }
       .hero-text h1 {
         font-family: "Montserrat", sans-serif;
-        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-size: clamp(2.2rem, 4vw, 3.5rem);
         line-height: 1.1;
         margin-bottom: 25px;
         letter-spacing: -2px;
-        color: var(--white); /* Başlık Beyaz */
+        color: var(--white);
       }
       .hero-text h1 span {
         color: var(--orange);
       }
       .hero-text p {
-        font-size: 1.15rem;
-        color: #cbd5e1; /* Yazı rengi lacivert üzerinde okunması için açıldı */
+        font-size: 1.1rem;
+        color: #cbd5e1;
         margin-bottom: 40px;
         line-height: 1.7;
-        font-weight: 500; /* i noktaları için font ağırlığı artırıldı */
-        letter-spacing: 0.01em;
+        font-weight: 500;
       }
 
       .btn-primary {
@@ -150,6 +148,7 @@
         color: var(--navy);
       }
 
+      /* --- SLIDER --- */
       .slider-box {
         position: relative;
         width: 100%;
@@ -169,7 +168,6 @@
         background-size: cover;
         background-position: center;
       }
-
       .after-img {
         background-image: url("https://drive.google.com/thumbnail?id=1zQINvJ3rMxaQUhuBir9L4uNzPGH5K5Ng&sz=w1200");
         z-index: 1;
@@ -180,7 +178,6 @@
         border-right: 4px solid var(--orange);
         z-index: 2;
       }
-
       .handle {
         position: absolute;
         z-index: 10;
@@ -199,7 +196,6 @@
         color: white;
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
       }
-
       .slider-label {
         position: absolute;
         top: 20px;
@@ -208,18 +204,66 @@
         font-weight: 800;
         z-index: 5;
         border-radius: 2px;
-        pointer-events: none;
       }
-      .label-before {
-        left: 20px;
-        background: rgba(0, 0, 0, 0.8);
-        color: white;
+      .label-before { left: 20px; background: rgba(0, 0, 0, 0.8); color: white; }
+      .label-after { right: 20px; background: var(--blue); color: white; }
+
+      /* --- YENİ BÖLÜM: TEKNİK BİLGİ VE BAKIM --- */
+      .technical-section {
+        padding: 100px 8%;
+        background: var(--white);
       }
-      .label-after {
-        right: 20px;
-        background: var(--blue);
-        color: white;
+      .tech-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 80px;
+        align-items: start;
       }
+      .tech-content h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+      .tech-content h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--orange);
+      }
+      .tech-content p {
+        line-height: 1.8;
+        color: var(--grey);
+        margin-bottom: 20px;
+        font-size: 1.05rem;
+      }
+      .tech-card {
+        background: var(--light-bg);
+        padding: 40px;
+        border-radius: 8px;
+        border-left: 6px solid var(--blue);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      }
+      .tech-card h3 {
+        margin-bottom: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.2rem;
+      }
+      .tech-list {
+        list-style: none;
+      }
+      .tech-list li {
+        margin-bottom: 15px;
+        display: flex;
+        gap: 15px;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .tech-list i { color: var(--orange); margin-top: 4px; }
 
       /* --- ISO BELGELERİMİZ --- */
       .iso-section {
@@ -227,53 +271,21 @@
         text-align: center;
         background: var(--light-bg);
       }
-      .iso-section h2 {
-        font-family: "Montserrat", sans-serif;
-        margin-bottom: 50px;
-        font-size: 2.2rem;
-      }
       .iso-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
       }
-
       .iso-thumb {
         background: white;
         padding: 20px;
         border-radius: 12px;
         text-decoration: none;
-        color: var(--navy);
         transition: 0.4s;
         border: 1px solid #eee;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
       }
-      .iso-thumb:hover {
-        transform: translateY(-10px);
-        border-color: var(--blue);
-      }
-      .iso-thumb img {
-        width: 100%;
-        height: 250px;
-        object-fit: contain;
-        margin-bottom: 20px;
-        background: #fafafa;
-        padding: 20px;
-        border-radius: 8px;
-      }
-      .iso-thumb h3 {
-        font-size: 1rem;
-        font-weight: 800;
-        color: var(--navy);
-      }
-      .iso-thumb span {
-        color: var(--orange);
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-top: 10px;
-        display: block;
-      }
+      .iso-thumb:hover { transform: translateY(-10px); border-color: var(--blue); }
+      .iso-thumb img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; }
 
       /* --- SOSYAL MENÜ --- */
       .float-menu {
@@ -285,186 +297,54 @@
         flex-direction: column;
         gap: 15px;
       }
-      .f-circle {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 28px;
-        text-decoration: none;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-      }
-      .f-circle:hover {
-        transform: scale(1.1);
-      }
-      .f-yt {
-        background: var(--yt);
-      }
-      .f-ig {
-        background: var(--ig);
-      }
-      .f-wa {
-        background: var(--wa);
-        animation: pulse-wa 2s infinite;
-      }
+      .f-circle { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; text-decoration: none; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: 0.3s; }
+      .f-yt { background: var(--yt); }
+      .f-ig { background: var(--ig); }
+      .f-wa { background: var(--wa); animation: pulse-wa 2s infinite; }
 
       @keyframes pulse-wa {
-        0% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-        }
-        70% {
-          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-        }
+        0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+        70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
       }
 
-      /* --- KURUMSAL FOOTER --- */
-      footer {
-        background: var(--footer-bg);
-        padding: 100px 8% 40px;
-        color: #cbd5e1;
-        position: relative;
-      }
-      footer::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(to right, var(--blue), var(--orange));
-      }
-      .footer-grid {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr;
-        gap: 80px;
-      }
-
-      .footer-logo-wrapper {
-        background: white;
-        display: inline-block;
-        padding: 15px;
-        border-radius: 8px;
-        margin-bottom: 25px;
-      }
-      .footer-logo {
-        height: 70px;
-        width: auto;
-        display: block;
-      }
-
-      .footer-title {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 800;
-        font-size: 0.85rem;
-        margin-bottom: 30px;
-        color: var(--white);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        position: relative;
-      }
-      .footer-title::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 30px;
-        height: 2px;
-        background: var(--orange);
-      }
-
-      .footer-info {
-        list-style: none;
-      }
-      .footer-info li {
-        display: flex;
-        gap: 15px;
-        margin-bottom: 20px;
-        font-size: 0.9rem;
-        line-height: 1.6;
-      }
-      .footer-info i {
-        color: var(--blue);
-        font-size: 1.1rem;
-      }
-      .footer-info a {
-        color: #cbd5e1;
-        text-decoration: none;
-        transition: 0.3s;
-      }
-      .footer-info a:hover {
-        color: var(--white);
-      }
-
-      .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        margin-top: 80px;
-        padding-top: 30px;
-        text-align: center;
-        font-size: 0.75rem;
-        color: #64748b;
-        letter-spacing: 1px;
-      }
+      /* --- FOOTER --- */
+      footer { background: var(--footer-bg); padding: 100px 8% 40px; color: #cbd5e1; position: relative; }
+      footer::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(to right, var(--blue), var(--orange)); }
+      .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 80px; }
+      .footer-logo-wrapper { background: white; display: inline-block; padding: 15px; border-radius: 8px; margin-bottom: 25px; }
+      .footer-logo { height: 70px; width: auto; }
+      .footer-title { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 0.85rem; margin-bottom: 30px; color: var(--white); text-transform: uppercase; letter-spacing: 2px; position: relative; }
+      .footer-title::after { content: ""; position: absolute; bottom: -10px; left: 0; width: 30px; height: 2px; background: var(--orange); }
+      .footer-info { list-style: none; }
+      .footer-info li { display: flex; gap: 15px; margin-bottom: 20px; font-size: 0.9rem; }
+      .footer-info i { color: var(--blue); }
+      .footer-info a { color: #cbd5e1; text-decoration: none; }
+      .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 80px; padding-top: 30px; text-align: center; font-size: 0.75rem; color: #64748b; }
 
       @media (max-width: 1024px) {
-        .hero {
-          grid-template-columns: 1fr;
-          text-align: center;
-        }
-        .iso-grid {
-          grid-template-columns: 1fr;
-        }
-        .footer-grid {
-          grid-template-columns: 1fr;
-          gap: 50px;
-        }
+        .hero, .tech-grid, .iso-grid, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+        .hero { text-align: center; }
       }
     </style>
   </head>
   <body>
     <div class="float-menu">
-      <a
-        href="https://www.youtube.com/@slipringas706"
-        class="f-circle f-yt"
-        target="_blank"
-        ><i class="fab fa-youtube"></i
-      ></a>
-      <a
-        href="https://www.instagram.com/slipring.as/"
-        class="f-circle f-ig"
-        target="_blank"
-        ><i class="fab fa-instagram"></i
-      ></a>
-      <a href="https://wa.me/905525676677" class="f-circle f-wa" target="_blank"
-        ><i class="fab fa-whatsapp"></i
-      ></a>
+      <a href="https://www.youtube.com/@slipringas706" class="f-circle f-yt" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/slipring.as/" class="f-circle f-ig" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/905525676677" class="f-circle f-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <div class="top-specs">
-      <span>Slipring Elektrik A.Ş. | Onarım Ve Bakım</span>
-      <span
-        ><a href="mailto:info@sliprings.com.tr"
-          ><i class="fas fa-envelope"></i> info@sliprings.com.tr</a
-        ></span
-      >
+      <span>Slipring Elektrik A.Ş. | Profesyonel Onarım Merkezi</span>
+      <span><a href="mailto:info@sliprings.com.tr"><i class="fas fa-envelope"></i> info@sliprings.com.tr</a></span>
     </div>
 
     <header>
-      <a href="#">
-        <img
-          src="https://drive.google.com/thumbnail?id=1bU5UyIbKonv31NYvduKSd46JVNzSyAr7"
-          alt="Slipring Elektrik A.Ş. Logo"
-          class="header-logo"
-        />
-      </a>
+      <a href="#"><img src="https://drive.google.com/thumbnail?id=1bU5UyIbKonv31NYvduKSd46JVNzSyAr7" alt="Logo" class="header-logo" /></a>
       <nav>
         <ul>
+          <li><a href="#bakim">Teknik Bakım</a></li>
           <li><a href="#belgeler">ISO Belgeleri</a></li>
           <li><a href="https://wa.me/905525676677">Bize Ulaşın</a></li>
         </ul>
@@ -474,14 +354,11 @@
     <main>
       <section class="hero">
         <div class="hero-text">
-          <h1>Hassas Onarım, <br /><span>Kusursuz</span> İletim.</h1>
+          <h1><span>Slip Ring</span> <br />Tamiri Ve Bakımı</h1>
           <p>
-            Savunma, enerji ve medikal sektörlerindeki kritik slipring
-            ünitelerini; akredite mühendislik merkezimizde ileri teknik
-            restorasyon süreçlerinden geçirerek, orijinal fabrika standartlarına
-            ulaştırıyoruz.
+            Maliyetli değişimler yerine, hassas mühendislik ile restorasyon. Tüm markaların slipring ünitelerini fabrika standartlarına ulaştırıyoruz.
           </p>
-          <a href="https://wa.me/905525676677" class="btn-primary">ANALİZ TALEBİ GÖNDER</a>
+          <a href="https://wa.me/905525676677" class="btn-primary">TEKNİK RAPOR TALEBİ</a>
         </div>
 
         <div class="slider-box" id="slider-root">
@@ -493,44 +370,52 @@
         </div>
       </section>
 
+      <section class="technical-section" id="bakim">
+        <div class="tech-grid">
+          <div class="tech-content">
+            <h2>Sistem Güvenilirliği Ve Süreklilik</h2>
+            <p>
+              <strong>Slip ring sistemleri;</strong> elektrik enerjisinin ve sinyalin, sabit bir kaynaktan döner bir parçaya aktarılmasını sağlayan elektromekanik yapılardır. Motorlar, jeneratörler, vinçler ve rüzgâr türbinlerinde kritik rol oynarlar.
+            </p>
+            <p>
+              Sürekli mekanik temas nedeniyle karbon fırçalar zamanla aşınır. Bu aşınma düzensiz temasa, ark oluşumuna ve yüzey hasarına yol açar. Tozlu, nemli veya yağlı ortamlarda biriken karbon tozu sisteminize ciddi zarar verebilir.
+            </p>
+            <p style="background: #fff4e5; padding: 15px; border-radius: 4px; color: var(--navy); font-weight: 600;">
+              Firmamız, yüksek maliyetli değişimler yerine tüm markaların tamir hizmetini hassas raporlama ile gerçekleştirmektedir.
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3>Neleri İnceliyoruz?</h3>
+            
+            <ul class="tech-list">
+              <li><i class="fas fa-check-circle"></i> Bilezik ve İletken Tel Restorasyonu</li>
+              <li><i class="fas fa-check-circle"></i> Karbon Fırça ve Kömür Yenileme</li>
+              <li><i class="fas fa-check-circle"></i> Rulman ve Mekanik Montaj Kontrolü</li>
+              <li><i class="fas fa-check-circle"></i> Kart ve Kablo Detay İncelemesi</li>
+              <li><i class="fas fa-check-circle"></i> Hassas Yüzey Temizliği ve Vakumlama</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section class="iso-section" id="belgeler">
-        <h2>ISO Belgelerimiz</h2>
+        <h2 style="font-family: 'Montserrat'; margin-bottom: 50px;">ISO Belgelerimiz</h2>
         <div class="iso-grid">
-          <a
-            href="https://drive.google.com/file/d/16eKo5FXKgdwIVC1BBPDrFHUQwFGa-2PZ/view"
-            class="iso-thumb"
-            target="_blank"
-          >
-            <img
-              src="https://drive.google.com/thumbnail?id=1bU5UyIbKonv31NYvduKSd46JVNzSyAr7"
-              alt="ISO 9001"
-            />
-            <h3>ISO 9001:2015</h3>
-            <span>Sertifikayı Görüntüle →</span>
+          <a href="#" class="iso-thumb">
+            <img src="https://drive.google.com/thumbnail?id=1bU5UyIbKonv31NYvduKSd46JVNzSyAr7" alt="ISO 9001" />
+            <h3 style="font-size: 1rem;">ISO 9001:2015</h3>
+            <span style="color: var(--orange); font-size: 0.8rem; font-weight: 700;">GÖRÜNTÜLE →</span>
           </a>
-          <a
-            href="https://drive.google.com/file/d/1f_0K3l3DG6fHrFWiQULdPedDUf6Rp-p1/view"
-            class="iso-thumb"
-            target="_blank"
-          >
-            <img
-              src="https://drive.google.com/thumbnail?id=1bU5UyIbKonv31NYvduKSd46JVNzSyAr7"
-              alt="ISO 14001"
-            />
-            <h3>ISO 14001:2015</h3>
-            <span>Sertifikayı Görüntüle →</span>
+          <a href="#" class="iso-thumb">
+            <img src="https://drive.google.com/thumbnail?id=1bU5UyIbKonv31NYvduKSd46JVNzSyAr7" alt="ISO 14001" />
+            <h3 style="font-size: 1rem;">ISO 14001:2015</h3>
+            <span style="color: var(--orange); font-size: 0.8rem; font-weight: 700;">GÖRÜNTÜLE →</span>
           </a>
-          <a
-            href="https://drive.google.com/file/d/1f5pHYTXw0BVc77XmaexX6sLEhpEuczFN/view"
-            class="iso-thumb"
-            target="_blank"
-          >
-            <img
-              src="https://drive.google.com/thumbnail?id=1bU5UyIbKonv31NYvduKSd46JVNzSyAr7"
-              alt="ISO 15001"
-            />
-            <h3>ISO 15001:2010</h3>
-            <span>Sertifikayı Görüntüle →</span>
+          <a href="#" class="iso-thumb">
+            <img src="https://drive.google.com/thumbnail?id=1bU5UyIbKonv31NYvduKSd46JVNzSyAr7" alt="ISO 15001" />
+            <h3 style="font-size: 1rem;">ISO 15001:2010</h3>
+            <span style="color: var(--orange); font-size: 0.8rem; font-weight: 700;">GÖRÜNTÜLE →</span>
           </a>
         </div>
       </section>
@@ -540,45 +425,29 @@
       <div class="footer-grid">
         <div>
           <div class="footer-logo-wrapper">
-            <img
-              src="https://drive.google.com/thumbnail?id=1bU5UyIbKonv31NYvduKSd46JVNzSyAr7"
-              alt="Slipring Elektrik A.Ş."
-              class="footer-logo"
-            />
+            <img src="https://drive.google.com/thumbnail?id=1bU5UyIbKonv31NYvduKSd46JVNzSyAr7" alt="Logo" class="footer-logo" />
           </div>
           <p style="font-size: 0.9rem; line-height: 1.8">
-            Savunma ve enerji odaklı mühendislik çözümleri sunan Türkiye'nin
-            sertifikalı ilk slipring restorasyon merkezi.
+            Türkiye'nin sertifikalı ilk slipring restorasyon merkezi olarak savunma ve enerji sektörlerine mühendislik çözümleri sunuyoruz.
           </p>
         </div>
         <div>
           <h4 class="footer-title">ADRES</h4>
           <ul class="footer-info">
-            <li>
-              <i class="fas fa-map-marker-alt"></i> İOSB İmsan Sanayi Sitesi, E1
-              Blok No. 4/5 Küçükçekmece / İstanbul
-            </li>
+            <li><i class="fas fa-map-marker-alt"></i> İOSB İmsan Sanayi Sitesi, E1 Blok No. 4/5 Küçükçekmece / İstanbul</li>
           </ul>
         </div>
         <div>
           <h4 class="footer-title">İLETİŞİM</h4>
           <ul class="footer-info">
-            <li>
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:info@sliprings.com.tr">info@sliprings.com.tr</a>
-            </li>
-            <li>
-              <i class="fas fa-phone"></i>
-              <a href="tel:+905525676677">+90 552 567 66 77</a>
-            </li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:info@sliprings.com.tr">info@sliprings.com.tr</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+905525676677">+90 552 567 66 77</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         &copy; 2026 Slipring Elektrik A.Ş. <br />
-        <span style="font-weight: 300; opacity: 0.5"
-          >Tüm Hakları Saklıdır.</span
-        >
+        <span style="font-weight: 300; opacity: 0.5">Tüm Hakları Saklıdır.</span>
       </div>
     </footer>
 
@@ -599,14 +468,10 @@
 
       handle.addEventListener("mousedown", () => (active = true));
       window.addEventListener("mouseup", () => (active = false));
-      window.addEventListener("mousemove", (e) => {
-        if (active) move(e.clientX);
-      });
+      window.addEventListener("mousemove", (e) => { if (active) move(e.clientX); });
       handle.addEventListener("touchstart", () => (active = true));
       window.addEventListener("touchend", () => (active = false));
-      window.addEventListener("touchmove", (e) => {
-        if (active) move(e.touches[0].clientX);
-      });
+      window.addEventListener("touchmove", (e) => { if (active) move(e.touches[0].clientX); });
     </script>
   </body>
 </html>
